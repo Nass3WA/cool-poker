@@ -27,8 +27,8 @@ Route::post('users/login', [UserController::class,'signin'])->name('users.signin
 Route::get('/users/logout', [UserController::class, 'logout'])->name('users.logout');
 
 //Affichage de la partie mise à jour du profil
-Route::get('users/update', [UserController::class,'update'])->name('users.update');
-Route::post('users/update', [UserController::class,'edit'])->name('users.edit');
+Route::get('users/update', [UserController::class,'edit'])->name('users.edit');
+Route::post('users/update', [UserController::class,'update'])->name('users.update');
 
 // //Affichage de tous les jeux 
 // Route::get('/games', [GameController::class, 'index'])->name('games.index');

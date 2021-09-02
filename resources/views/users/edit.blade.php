@@ -7,7 +7,7 @@
     <h1>Modifier votre profil</h1>
     
      <section>
-        <form method="post" action="{{ route('users.edit') }}" enctype = "multipart/form-data">
+        <form method="post" action="{{ route('users.update') }}" enctype = "multipart/form-data">
             @csrf
             @if($errors->any())
                 <aside>

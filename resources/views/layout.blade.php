@@ -19,7 +19,7 @@
                         <li><a href="{{ route('homepage') }}">Accueil</a></li>
                     <!--Affichage des menus uniquement que si l'utilisateur est connecté-->
                     @auth
-                        <li><a href="{{ route('users.update') }}">Modifier son profil</a></li>
+                        <li><a href="{{ route('users.edit') }}">Modifier son profil</a></li>
                         <li><a href="{{ route('users.logout') }}">Se déconnecter</a></li>
                     @else
                         <li><a href="{{ route('users.create') }}">Créer un compte</a></li>
