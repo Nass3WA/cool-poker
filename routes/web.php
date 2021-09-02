@@ -1,8 +1,9 @@
 <?php
 
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\UserController;
+use App\Http\Controllers\OldUserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,18 +20,33 @@ use App\Http\Controllers\UserController;
 Route::get('/', [HomeController::class, 'home'])->name('homepage');
 
 
-// //Affichage de la partie authentification (login, register, logout)
-Route::get('users/register', [UserController::class,'create'])->name('users.create');
-Route::post('users/register', [UserController::class,'store'])->name('users.store');
-Route::get('users/login', [UserController::class,'login'])->name('users.login');
-Route::post('users/login', [UserController::class,'signin'])->name('users.signin');
-Route::get('/users/logout', [UserController::class, 'logout'])->name('users.logout');
+// Users Routes
+Route::name('users.')->prefix('users')->group(function() {
 
-//Affichage de la partie mise à jour du profil
-Route::get('users/update', [UserController::class,'edit'])->name('users.edit');
-Route::post('users/update', [UserController::class,'update'])->name('users.update');
+    // //Affichage de la partie authentification (login, register, logout)
+    // Middleware -> these pages can only be accessed if user is not logged in (guest)
+    Route::middleware('guest')->group(function() {
+        Route::get('register', [UserController::class, 'create'])->name('create');
+        Route::post('register', [UserController::class, 'store'])->name('store');
 
-// //Affichage de tous les jeux 
+        Route::get('login', [UserController::class, 'login'])->name('login');
+        Route::post('login', [UserController::class, 'signin'])->name('signin');
+    });
+
+    // Middleware -> these pages can only be accessed if user is logged in
+    Route::middleware('auth')->group(function() {
+
+        Route::get('logout', [UserController::class, 'logout'])->name('logout');
+
+        //Affichage de la partie mise à jour du profil
+        Route::get('update', [UserController::class, 'edit'])->name('edit');
+        Route::post('update', [UserController::class, 'update'])->name('update');
+    });
+
+});
+
+
+// //Affichage de tous les jeux
 // Route::get('/games', [GameController::class, 'index'])->name('games.index');
 
 // //Affichage de l'ajout d'un jeu
