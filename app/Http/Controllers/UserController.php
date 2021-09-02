@@ -26,8 +26,7 @@ class UserController extends Controller
             'password' => 'required|min:8|confirmed'
         ]);
         
-        // En amont taper dans le temrinal : php artisan storage:link pour créer un lien virtuel
-        //Enregistrement de l(image dans le dossier image
+        //Enregistrement de l'image dans le dossier image si l'utilisateur a ajouté un avatar
         if($request->file('avatar') === null) {
             $path = null;
         }else{
@@ -87,10 +86,18 @@ class UserController extends Controller
         // $user = DB::table('users')
         //     ->select('username', 'firstname', 'lastname', 'email', 'avatar')
         //     ->where('id', $user_id)
-        //     ->first();
-        // Attention a bien modifier le protected $fillable dans le model user
+        //     ->get();
         // var_dump($user);
         // exit;
+        
+        //Enregistrement de l'image dans le dossier image si l'utilisateur a ajouté un avatar
+        if($request->file('avatar') === null) {
+            $path = auth()->user()->avatar;
+        }else{
+            $path = $request->file('avatar')->store('public/images');
+            $path = str_replace('public', 'storage', $path);
+        }
+        
         if($request->input('password') === null) {
             
             $user->update([
@@ -98,7 +105,7 @@ class UserController extends Controller
                 'email' => $request->input('email'),
                 'firstname' => $request->input('firstname'),
                 'lastname' => $request->input('lastname'),
-                'avatar' =>  $request->input('avatar')
+                'avatar' =>  $path
             ]);
         }else{
                 $user->update([
@@ -107,7 +114,7 @@ class UserController extends Controller
                 'firstname' => $request->input('firstname'),
                 'lastname' => $request->input('lastname'),
                 'password' => bcrypt($request->input('password')),
-                'avatar' =>  $request->input('avatar')
+                'avatar' =>  $path
             ]);
         }
         return redirect()->route('homepage');
