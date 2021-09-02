@@ -1,0 +1,79 @@
+
+
+
+
+
+/***************************FORMULAIRE***********************************/
+
+/*form {*/
+/*    min-height: 280px;*/
+/*}*/
+
+/* Style de chaque groupe de champs (fieldset) */
+/*fieldset {*/
+/*    display: flex;*/
+/*    flex-direction : row;*/
+/*    flex-wrap : wrap;*/
+/*    justify-content: space-around;*/
+/*    border: none;*/
+/*    padding: 15px 10px;*/
+/*    align-items : center;*/
+/*}*/
+
+/* Style de chaque input */
+/*input, textarea {*/
+/*	margin: 5px;*/
+/*	padding: 0.65em 1em;*/
+/*	color: #333;*/
+/*	background-color: #fff;*/
+/*	border: 1px solid #ccc;*/
+/*	border-radius: 0.5em;*/
+/*	width:100%;*/
+/*	margin-bottom:1em;*/
+/*}*/
+
+/*textarea {*/
+/*    width:100%;*/
+/*    min-height:10em;*/
+/*    resize: none;*/
+/*}*/
+
+/*.form-label {*/
+/*    width: 40%;    */
+
+/*}*/
+
+/*.text {*/
+/*width: 40%;*/
+/*height: 100%;*/
+/*}*/
+
+/*.formulaire {*/
+/*    padding-top: 2px;*/
+/*    padding-bottom: 30px;*/
+/*}*/
+
+/*bouton formulaire*/
+
+/*.button {*/
+/*    Padding: 1em 2em;*/
+/*    color: #fff;*/
+/*    background-color: #0096D0;*/
+/*    border-color: #0096D0;*/
+/*    border-radius: 0.5em;*/
+/*    cursor: pointer;*/
+    /*justify-content: center;*/
+    /*margin: 0 auto;*/
+/*}*/
+
+/*.button:hover {*/
+/*    text-decoration: none;*/
+/*    color:#DD5735;*/
+/*    background-color: #fff;*/
+/*}*/
+
+/*.toolbar {*/
+	padding: 1em 2em; /* haut/bas gauche/droite */
+/*	text-align: center;*/
+/*	border-radius: 0.5em;*/
+/*}*/
