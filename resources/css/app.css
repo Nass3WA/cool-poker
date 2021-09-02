@@ -185,7 +185,7 @@ aside li:before{
 }
 .about li::before {
 	padding-right:1rem;
-	content:url(../img/puce-fleche.png);
+	/*content:url(../img/puce-fleche.png);*/
 }
 
 /*.intro p {*/
