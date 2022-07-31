@@ -8,6 +8,7 @@
 
         <article>
             <h2>HELLO</h2>
+            <!-- <img src="/img/image slider hd soudage.jpg" alt="Image test"> -->
         </article>
     
 @endsection

@@ -1,0 +1,335 @@
+
+/* *****************************************************************
+TOOLS
+***************************************************************** */
+
+/*@font-face {*/
+/*    font-family: "open-sans";*/
+/*    src: url("../fonts/Open_Sans/OpenSans-Regular.ttf") format("trueType");*/
+/*    font-weight: normal;*/
+/*    font-style: normal;*/
+/*}*/
+
+/*@font-face {*/
+/*    font-family: "economica";*/
+/*    src: url("../fonts/Economica/Economica-Regular.ttf") format("trueType");*/
+/*    font-weight: normal;*/
+/*    font-style: normal;*/
+/*}*/
+
+
+/*import des fonts google*/
+@import url('https://fonts.googleapis.com/css2?family=Economica:ital,wght@0,400;0,700;1,400;1,700&family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap');
+
+:root {
+	--couleurPrincipale: #f0921f ;
+	--couleurSecondaire: #b878b5 ;
+}
+
+
+/* *****************************************************************
+GENERALITIES
+***************************************************************** */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+	font-size: 62.5%;
+}
+
+
+body {
+	margin: 0;
+	box-sizing: border-box;
+	font-family: open-sans;
+	color: #363636;
+	font-size: 1.6rem;
+	margin: 0;
+	margin: 0 auto;
+}
+
+
+h1, h2, h3 {
+  font-family: economica;
+}
+
+h1 {
+	font-size: 5rem;
+	color: var(--couleurPrincipale);
+	text-align: center;
+}
+
+h2 {
+	font-size: 4rem;
+	color: var(--couleurPrincipale);
+}
+
+h3 {
+	font-size: 3rem;
+	color: var(--couleurPrincipale);
+}
+
+.chapo {
+	font-style: italic;
+	font-weight: bold;
+	color: var(--couleurPrincipale);
+}
+
+
+footer {
+	text-align: center;
+	background-color: #40CCEA;
+	color: #fff;
+	padding: 20px;
+}
+
+a {
+  color: #0096D0;
+  text-decoration: none;
+}
+
+p {
+	margin-top: 0rem;
+	margin-bottom: 2rem;
+	line-height: 1.3;
+}
+
+
+/* *****************************************************************
+HEADER
+***************************************************************** */
+
+header {
+    text-align:center;
+    border-top:5px solid var(--couleurPrincipale);
+    padding-top:5rem;
+    font-family: economica;
+    font-weight: bold;
+    font-size: 2.5rem;
+}
+nav ul {
+    display:flex;
+    justify-content: space-evenly;
+    list-style:none;
+	background-color: var(--couleurPrincipale);
+	margin: 5rem 0;
+	padding: .5rem 0;
+}
+nav a {
+    color:#fff;
+    text-decoration:none;
+    text-transform:uppercase;
+    padding:1rem 2.5rem;
+    display:inline-block;
+}
+nav a:hover {
+	background-color: #fff;
+	color: var(--couleurPrincipale);
+}
+
+
+/* *****************************************************************
+CONTAINER
+***************************************************************** */
+
+.container {
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
+  
+/* *****************************************************************
+MAIN LAYOUT
+***************************************************************** */
+
+
+
+aside {
+	width: 30%;
+}
+
+aside li {
+	/*list-style-image: url('../ressources/img/puce-fleche.png');*/
+}
+
+aside li:before{
+	/*content: url('../ressources/img/puce-fleche.png');*/
+}
+
+.about {
+	display: flex;
+	justify-content: center;
+}
+
+.intro {
+	width: 60%;
+}
+
+.intro img {
+	float: left;
+	padding-right:1em;
+}
+
+.intro p {
+	padding: 1em;
+}
+
+.about ul {
+	padding:0;
+	list-style:none;
+}
+.about li {
+	margin-bottom:2rem;
+}
+.about li::before {
+	padding-right:1rem;
+	/*content:url(../img/puce-fleche.png);*/
+}
+
+/*.intro p {*/
+
+/*}*/
+
+
+.flex-grid {
+	display:flex;
+	flex-wrap:wrap;
+}
+
+.flex-grid figure {
+	width:48%;
+	margin:0 0 5rem 0;
+}
+
+.flex-grid img {
+	float:left;
+	margin:2rem;
+}
+
+
+/* *****************************************************************
+FOOTER
+***************************************************************** */
+
+
+footer {
+	background-color: var(--couleurPrincipale);
+	margin-top:7rem;
+}
+footer .container {
+	padding:3rem;
+	text-align:center;
+}
+footer a {
+	font-size:3rem;
+	margin:0 2rem;
+	color:#fff;
+	text-decoration:none;
+}
+.footer {
+	padding:2rem;
+	text-align:center;
+	background-color: #444;
+	color:#fff;
+}
+.footer a {
+	color:#fff;
+}
+.footer img {
+	width:50px;
+}
+
+
+/* *****************************************************************
+VARIOUS
+***************************************************************** */
+
+/*bouton more*/
+a.readmore, .submit button {
+	font-family: economica;
+	background-color: var(--couleurPrincipale);
+	color:#fff;
+	text-decoration:none;
+	font-size: 2rem;
+	text-transform: uppercase;
+	padding: 1.5rem 2rem;
+	display: inline-block;
+}
+
+a.readmore:hover {
+	background-color: #FFF;
+	color: #0096D0;
+}
+
+
+/*************************************TABLEAU*******************************/
+
+table {
+	
+ 	width: 100%;
+ 	font-family: open-sans;
+ 	border-collapse: collapse;
+ 	text-align: center;
+}
+
+th {
+  background-color: var(--couleurPrincipale);
+  color: #fff;
+}
+
+
+th, td {
+  border: 1px solid var(--couleurSecondaire);
+  padding: 1.5rem 2rem;
+}
+
+/*sélectionne toutes les cases vides, très utiles*/
+td:empty {
+	background-color: #ffeefe;
+}
+
+td:first-of-type {
+	font-weight:bold;
+}
+
+
+/*************************************FORM*******************************/
+
+form {
+	color: var(--couleurPrincipale);
+	border: 1px  solid var(--couleurPrincipale);
+	font-weight:bold;
+	padding:2rem;
+}
+fieldset {
+	border:0;
+	padding:0;
+	display:flex;
+	justify-content:space-around;
+	background-color: #ffeefe;
+	padding:3rem;
+	margin-bottom:2rem;
+}
+input, select {
+	border : 1px solid var(--couleurSecondaire);
+	padding:0.5rem;
+}
+
+.submit {
+	text-align: center;
+}
+button {
+	border:none;
+	background-color: var(--couleurPrincipale);
+	color:#fff;
+	font-size:2.5rem;
+	text-transform:uppercase;
+	padding:1rem;
+	cursor:pointer;
+}
+button:hover {
+	background-color: #fff ;
+	color:var(--couleurPrincipale);
+}
